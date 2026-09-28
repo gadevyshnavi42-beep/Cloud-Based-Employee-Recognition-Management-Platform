@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Give Recognition - RecognitionHub</title>
+</head>
+<body data-page="give-recognition">
+  <div id="navbar-container"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-md-3 col-lg-2 d-none d-md-block sidebar" id="sidebar-container"></aside>
+      <main class="col-md-9 col-lg-10 p-3 p-md-4">
+        <div id="alertBox"></div>
+        <h3 class="fw-bold mb-4">Give Recognition</h3>
+        <div class="card" style="max-width:760px"><div class="card-body p-4">
+          <form id="recognitionForm" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="receiver">Employee</label>
+                <select class="form-select" id="receiver" name="receiver" required><option value="">Loading...</option></select>
+                <div class="invalid-feedback">Please select an employee.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="category">Category</label>
+                <select class="form-select" id="category" name="category" required><option value="">Loading...</option></select>
+                <div class="invalid-feedback">Please select a category.</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="title">Title</label>
+              <input type="text" class="form-control" id="title" name="title" maxlength="100" required>
+              <div class="invalid-feedback">Please enter a title (max 100 characters).</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="4" maxlength="1000" required></textarea>
+              <div class="invalid-feedback">Please write a message.</div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="points">Points (1 - 100)</label>
+                <input type="number" class="form-control" id="points" name="points" min="1" max="100" step="1" value="10" required>
+                <div class="invalid-feedback">Enter a whole number from 1 to 100.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="image">Image (optional, max 2 MB)</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/png,image/jpeg,image/gif,image/webp">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-brand px-4"><i class="bi bi-send me-1"></i>Submit recognition</button>
+          </form>
+        </div></div>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/recognition.js"></script>
+</body>
+</html>
